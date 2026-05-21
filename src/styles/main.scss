@@ -1,0 +1,121 @@
+@use 'variables';
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body{
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background-image: linear-gradient(variables.$blue1, variables.$blue2);
+  overflow:hidden;
+}
+
+.card{
+  background-color: rgba(variables.$backgroundColor, 0.2);
+  backdrop-filter: blur(10px);
+  padding:20px;
+  border-radius:25px;
+  text-align:center;
+  width:80%;
+  max-width:650px;
+  color: variables.$textColor;
+  box-shadow:0 20px 40px rgba(variables.$blue1, 0.2);
+}
+
+h1{
+  font-size:2rem;
+  margin-bottom:15px;
+}
+
+h2{
+  font-weight:300;
+  margin-bottom:25px;
+}
+
+p{
+  font-size:1.1rem;
+  line-height:1.7;
+  margin-bottom:20px;
+}
+
+.info{
+  background-color: rgba(variables.$backgroundColor, 0.15);
+  padding:20px;
+  border-radius:15px;
+  margin:25px 0;
+
+  &__text {
+    font-size: 32px;
+    font-weight: bold;
+  }
+}
+
+.btn{
+  display:inline-block;
+  padding:14px 30px;
+  background: variables.$textColor;
+  color: variables.$red;
+  text-decoration:none;
+  border-radius:40px;
+  font-weight:bold;
+  transition:0.3s;
+}
+
+.btn:hover{
+  background: variables.$red;
+  color: variables.$textColor;
+  transform:scale(1.05);
+}
+
+.emoji{
+  font-size:3rem;
+  margin-bottom:20px;
+}
+
+footer{
+  margin-top:30px;
+  opacity:0.9;
+  font-size:0.9rem;
+}
+
+@keyframes fadeIn{
+  from{
+    opacity:0;
+    transform:translateY(20px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+@media (max-width: 640px) {
+  body {
+    height: auto;
+    padding: 20px;
+    overflow: visible; 
+  }
+
+  .card {
+    width: 95%;
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .info__text {
+    font-size: 24px;
+  }
+
+  .btn {
+    width: 80%; 
+  }
+}
